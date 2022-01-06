@@ -1060,7 +1060,7 @@
                 "m_Node": {
                     "m_Id": "b7c4f813521c41828390d2bcb8ddeb4c"
                 },
-                "m_SlotId": 2
+                "m_SlotId": 3
             },
             "m_InputSlot": {
                 "m_Node": {
@@ -5373,7 +5373,7 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_Space": 4,
+    "m_Space": 0,
     "m_PositionSource": 0
 }
 

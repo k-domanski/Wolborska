@@ -337,7 +337,7 @@ Material:
     - _SPECULAR_ROUGHNESS: 1
     - _SPECULAR_WEIGHT: 0
     - _Smoothness: 0
-    - _SmoothnessRemapMax: 1
+    - _SmoothnessRemapMax: 0.19875777
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularAAScreenSpaceVariance: 0.1

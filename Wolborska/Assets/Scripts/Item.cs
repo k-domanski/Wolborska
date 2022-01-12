@@ -3,22 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class Item : MonoBehaviour, IInteractable
+public partial class Item : AInteractable
 {
-    public ButtonTrigger buttonTrigger => _buttonTrigger;
-    public bool isPickedUp => _isPickedUp;
-    private ButtonTrigger _buttonTrigger;
-    private GameObject _itemModel;
-    private bool _isPickedUp = false;
-    
-    public void Interact()
+    public Action onItemPickUp;
+    [SerializeField] private GameObject _itemModel;
+
+    public override void Interact() 
     {
-        if(!_isPickedUp)
+        if(!isActive)
         {
-            Debug.Log("Interakcja");
-            PickUp();
+            return;
         }
-        
+
+        PickUp();
     }
 
     public void Place(Vector3 position)
@@ -26,16 +23,11 @@ public partial class Item : MonoBehaviour, IInteractable
         transform.position = position;
         _itemModel.SetActive(true);
     }
-    void Awake()
-    {
-        _buttonTrigger = GetComponent<ButtonTrigger>();
-        _buttonTrigger.onButtonPressed += Interact;
-        _itemModel = GetComponentInChildren<Transform>().gameObject;
-    }
-    
     private void PickUp()
     {
-        _isPickedUp = true;
+        isActive = false;
+        buttonTrigger.IsActiveTest = false;
         _itemModel.SetActive(false);
+        onItemPickUp?.Invoke();
     }
 }

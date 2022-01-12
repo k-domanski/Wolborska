@@ -5,15 +5,26 @@ using System;
 
 public class ButtonTrigger : MonoBehaviour
 {
+    #region Properties
+    public bool IsActiveTest { get => isActive; set => isActive = value; }
+    #endregion
+
+    #region Events
     public Action onButtonPressed;
-    public Action onTriggerEnter;
+    public Action<InteractableType> onTriggerEnter;
     public Action onTriggerExit;
+    #endregion
 
+    #region Private
+    [SerializeField] private bool isActive = false;
+    [SerializeField] private InteractableType type;
     private bool isInRange = false;
+    #endregion
 
+    #region Messages
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && isInRange)
+        if(Input.GetKeyDown(KeyCode.E) && CanInteract())
         {
             onButtonPressed?.Invoke();
         }
@@ -21,12 +32,22 @@ public class ButtonTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         isInRange = true;
-        onTriggerEnter?.Invoke();
+        if(isActive)
+            onTriggerEnter?.Invoke(type);
     }
 
     private void OnTriggerExit(Collider other)
     {
         isInRange = false;
-        onTriggerExit?.Invoke();
+        if(isActive)
+            onTriggerExit?.Invoke();
     }
+    #endregion
+
+    #region Private Methods
+    private bool CanInteract()
+    {
+        return isActive && isInRange;
+    } 
+    #endregion
 }

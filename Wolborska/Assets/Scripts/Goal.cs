@@ -6,7 +6,6 @@ using UnityEngine.Playables;
 
 public class Goal : AInteractable
 {
-
     #region Private
     [SerializeField] private PlayableDirector _playableDirector;
     [SerializeField] private Item _item;
@@ -16,13 +15,19 @@ public class Goal : AInteractable
     private void OnEnable()
     {
         _item.onItemPickUp += SetGoalActive;
+        _playableDirector.stopped += ChangeGameState;
     }
     #endregion
+
     #region Private Methods
     private void SetGoalActive()
     {
         isActive = true;
         buttonTrigger.IsActiveTest = true;
+    }
+    private void ChangeGameState(PlayableDirector obj)
+    {
+        GameManager.instance.State = GameState.RUNNING;
     }
     #endregion
 
@@ -34,6 +39,7 @@ public class Goal : AInteractable
             return;
         }
 
+        GameManager.instance.State = GameState.CUTSCENE;
         _playableDirector.Play();
         _item.Place(transform.position);
         isActive = false;

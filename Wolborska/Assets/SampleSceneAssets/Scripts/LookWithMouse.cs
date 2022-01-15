@@ -26,6 +26,8 @@ public class LookWithMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.State == GameState.CUTSCENE)
+            return;
         bool unlockPressed, lockPressed;
 
 #if ENABLE_INPUT_SYSTEM

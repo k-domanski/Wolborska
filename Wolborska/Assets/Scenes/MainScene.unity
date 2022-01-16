@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.016521022, g: 0.017766133, b: 0.021680593, a: 1}
+  m_IndirectSpecularColor: {r: 0.016517535, g: 0.017763048, b: 0.021679431, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9831,67 +9831,6 @@ Transform:
   m_Father: {fileID: 629795064}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -1.8, z: 0}
---- !u!1001 &26970546963774618
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1588265718806435865, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_Name
-      value: synagoga wolborska model_zewnetrzny
-      objectReference: {fileID: 0}
-    - target: {fileID: 1588265718806435865, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 92.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8853531
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.46491924
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 55.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2108097960390886051, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 67824ca24fc39f74d9add08b7831e2d4, type: 3}
 --- !u!1001 &339466624549116130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10439,6 +10378,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 695e8f76e48d308439849bf20e9940f1, type: 3}
+--- !u!1001 &4590214640161754301
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 92.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8853531
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.46491924
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 55.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2491336914403756937, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015389842078617907, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
+      propertyPath: m_Name
+      value: synagoga wolborska model_zewnetrzny (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5a6cf32419772ae4db36995a77792ca7, type: 3}
 --- !u!4 &5423767837360679811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2829479463898014850, guid: 52ca0f306d6215a46baebc563e79bcf0, type: 3}

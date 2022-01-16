@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class Item : AInteractable
+public class Item : AInteractable
 {
     public Action onItemPickUp;
     [SerializeField] private GameObject _itemModel;

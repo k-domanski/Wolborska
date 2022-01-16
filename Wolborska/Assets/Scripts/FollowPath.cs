@@ -7,15 +7,16 @@ public class FollowPath : MonoBehaviour
     #region Properties
     [Header("Refs")]
     [SerializeField] private Transform path;
-    [SerializeField] private Transform cube;
     [Header("Properties")]
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float radius;
+    [SerializeField] private float triggerRadius = 4f;
     #endregion
 
     #region Private
     private Vector3[] waypoints;
     private IEnumerator coroutine;
+    private SphereCollider trigger;
+    private int nextWaypointIndex = 0;
     #endregion
 
     #region Messages
@@ -27,9 +28,17 @@ public class FollowPath : MonoBehaviour
             waypoints[i] = path.GetChild(i).position;
         }
 
-        /*test*/
-        cube.position = waypoints[0];
-        MoveToWaypoint(waypoints[1]);
+        trigger = GetComponent<SphereCollider>();
+        trigger.radius = triggerRadius;
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<PlayerMovement>())
+        {
+            MoveToWaypoint(waypoints[nextWaypointIndex]);
+        }
     }
 
 #if UNITY_EDITOR
@@ -48,25 +57,25 @@ public class FollowPath : MonoBehaviour
 #endif
     #endregion
 
-    #region Public
-    public void MoveToWaypoint(Vector3 pos)
+    #region Private Methods
+    private void MoveToWaypoint(Vector3 pos)
     {
         coroutine = MoveAlong(pos);
         StartCoroutine(coroutine);
     }
-    #endregion
 
-    #region Private Methods
     private IEnumerator MoveAlong(Vector3 pos)
     {
-        while (true)
+        while (transform.position != pos)
         {
-            cube.position = Vector3.MoveTowards(cube.position, pos, speed * Time.deltaTime);
-            if (cube.position == pos)
-                yield return null;
-
+            transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);
             yield return null;
         }
+
+        if(nextWaypointIndex != waypoints.Length - 1)
+            nextWaypointIndex++;
+
+        yield return null;
     } 
     #endregion
 

@@ -51,6 +51,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.State == GameState.CUTSCENE)
+            return;
+
         float x;
         float z;
         bool jumpPressed = false;

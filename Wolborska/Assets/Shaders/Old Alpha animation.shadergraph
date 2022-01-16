@@ -2890,10 +2890,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 1689.0,
-            "y": -345.9998474121094,
-            "width": 213.000244140625,
-            "height": 340.9999084472656
+            "x": 1718.0,
+            "y": -348.0,
+            "width": 212.9998779296875,
+            "height": 341.0
         }
     },
     "m_Slots": [
@@ -2919,7 +2919,7 @@
         "m_SerializableColors": []
     },
     "m_Conversion": {
-        "from": 2,
+        "from": 4,
         "to": 0
     },
     "m_ConversionType": 0
@@ -4995,7 +4995,7 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_Space": 2,
+    "m_Space": 4,
     "m_PositionSource": 0
 }
 
@@ -5373,7 +5373,7 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_Space": 2,
+    "m_Space": 4,
     "m_PositionSource": 0
 }
 

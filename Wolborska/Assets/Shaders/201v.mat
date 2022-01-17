@@ -58,7 +58,7 @@ Material:
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
-    - _Alpha_Treshold: 0.957
+    - _Alpha_Treshold: 0.85
     - _Alpha_mask_multi: 1
     - _BlendMode: 1
     - _ConservativeDepthOffsetEnable: 0

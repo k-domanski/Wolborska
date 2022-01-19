@@ -12,11 +12,14 @@ public class Goal : AInteractable
     [SerializeField] private Transform placementPoint;
     #endregion
 
+    public static Action onGoalCompleted;
+
     #region Messages
     private void OnEnable()
     {
         _item.onItemPickUp += SetGoalActive;
         _playableDirector.stopped += ChangeGameState;
+        _playableDirector.stopped += (t) => { onGoalCompleted?.Invoke(); };
     }
     #endregion
 

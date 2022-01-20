@@ -249,7 +249,10 @@ Material:
     - _ZTestGBuffer: 3
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _alpha_treshold: 0.186
+    - _alpha_treshold: 0.25
+    - _noise_density: 0.5
+    - _speed: 0.2
+    - _strength: 0.3
     m_Colors:
     - _BaseColor: {r: 0.6157619, g: 0.6157619, b: 0.6157619, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}

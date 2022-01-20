@@ -51,6 +51,7 @@ public class InteractionUI : MonoBehaviour
                 text = "Press [E] to interact.";
                 break;
             case InteractableType.DOOR:
+                text = "Press [E] to open the door.";
                 break;
             default:
                 break;

@@ -2,16 +2,28 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class BuildingController : MonoBehaviour
 {
     [SerializeField] private GameObject buildingModel;
+    [SerializeField] private PlayableDirector director;
+    [SerializeField] private FollowPath indicator;
+    [SerializeField] private Door door;
     private int goalsCompleted;
+    private bool canRepair;
 
     private void Awake()
     {
-        buildingModel.SetActive(false);
+        director.gameObject.SetActive(false);
+        indicator.gameObject.SetActive(false);
         Goal.onGoalCompleted += ManageBuilding;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<PlayerMovement>() && canRepair)
+            RepairMemory();
     }
 
     private void ManageBuilding()
@@ -21,16 +33,21 @@ public class BuildingController : MonoBehaviour
         if (goalsCompleted == 2)
             ShowBuilding();
         else if (goalsCompleted == 4)
-            RepairMemory();
+        {
+            canRepair = true;
+            indicator.gameObject.SetActive(true);
+            indicator.CanMove = true;
+        }
     }
 
     private void RepairMemory()
     {
-        throw new NotImplementedException();
+        director.Play();
+        director.stopped += t => door.SetDoorActive();
     }
 
     private void ShowBuilding()
     {
-        buildingModel.SetActive(true);
+        director.gameObject.SetActive(true);
     }
 }

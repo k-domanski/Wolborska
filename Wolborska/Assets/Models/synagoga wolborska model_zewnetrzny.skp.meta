@@ -18,12 +18,12 @@ SketchUpImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_005]1'
-    second: {fileID: 2100000, guid: 3f2c45696ce691647a6663864c9ae390, type: 2}
+    second: {fileID: 2100000, guid: 4369b73bf1ee4d1419b3a679311ec1d6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_005]2'
-    second: {fileID: 2100000, guid: b9d99361f4b368443a1ed451426e555d, type: 2}
+    second: {fileID: 2100000, guid: 4369b73bf1ee4d1419b3a679311ec1d6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -38,7 +38,7 @@ SketchUpImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_A11]1'
-    second: {fileID: 2100000, guid: 6a7088fd3ada7064a9e45395e8acc868, type: 2}
+    second: {fileID: 2100000, guid: 4d23cf3f2fb9b25438116dc39afe8030, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -73,32 +73,32 @@ SketchUpImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_D09]1'
-    second: {fileID: 2100000, guid: 91bf0d0c2d641e2489e6302177bf7e54, type: 2}
+    second: {fileID: 2100000, guid: fbc5f011e5b50174eaa2ed5f4f3e56d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_D09]2'
-    second: {fileID: 2100000, guid: 40e230c98fba9b34892a009d42dff8d5, type: 2}
+    second: {fileID: 2100000, guid: fbc5f011e5b50174eaa2ed5f4f3e56d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_D09]3'
-    second: {fileID: 2100000, guid: 553befc39bc25f84ca7ab843b2bc632a, type: 2}
+    second: {fileID: 2100000, guid: fbc5f011e5b50174eaa2ed5f4f3e56d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_D09]4'
-    second: {fileID: 2100000, guid: 299c9dbf4e13d8948903d08e3a6b7ef8, type: 2}
+    second: {fileID: 2100000, guid: fbc5f011e5b50174eaa2ed5f4f3e56d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_D09]6'
-    second: {fileID: 2100000, guid: ee285da9bb2db6f48b60f918b8e25382, type: 2}
+    second: {fileID: 2100000, guid: fbc5f011e5b50174eaa2ed5f4f3e56d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: '[Color_D09]7'
-    second: {fileID: 2100000, guid: 4a43bbbcb9bf6ce42a75994e0eee8a92, type: 2}
+    second: {fileID: 2100000, guid: fbc5f011e5b50174eaa2ed5f4f3e56d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -118,7 +118,7 @@ SketchUpImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: _defaultMat
-    second: {fileID: 2100000, guid: b36d2d0b14a70134ca734770ea75b2cd, type: 2}
+    second: {fileID: 2100000, guid: a1fd370e65778404c812fb626d55a238, type: 2}
   materials:
     materialImportMode: 2
     materialName: 2

@@ -7,13 +7,13 @@ public class Visibility : MonoBehaviour
     private MeshRenderer meshRenderer;
     private void Awake()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        meshRenderer.enabled = false;
+        //meshRenderer = GetComponent<MeshRenderer>();
+        //meshRenderer.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        meshRenderer.enabled = true;
+        //meshRenderer.enabled = true;
     }
 
     private void OnTriggerExit(Collider other)

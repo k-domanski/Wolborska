@@ -7,6 +7,7 @@ public class Item : AInteractable
 {
     public Action onItemPickUp;
     [SerializeField] private GameObject _itemModel;
+    [SerializeField] private FollowPath indicator;
 
     public override void Interact() 
     {
@@ -29,5 +30,7 @@ public class Item : AInteractable
         buttonTrigger.IsActiveTest = false;
         _itemModel.SetActive(false);
         onItemPickUp?.Invoke();
+        //indicator.SetActive(true);
+        indicator.CanMove = true;
     }
 }

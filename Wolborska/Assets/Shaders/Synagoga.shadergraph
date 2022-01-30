@@ -517,10 +517,10 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "0f9a2520278f40d6aa4eab7a59f04e35",
     "m_Id": -1058012458,
-    "m_DisplayName": "Vector3",
+    "m_DisplayName": "Vertex Position",
     "m_SlotType": 0,
     "m_Hidden": false,
-    "m_ShaderOutputName": "_Vector3",
+    "m_ShaderOutputName": "_Vertex_Position",
     "m_StageCapability": 3,
     "m_Value": {
         "x": 0.0,

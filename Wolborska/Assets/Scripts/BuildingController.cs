@@ -42,8 +42,14 @@ public class BuildingController : MonoBehaviour
 
     private void RepairMemory()
     {
+        GameManager.instance.State = GameState.CUTSCENE;
         director.Play();
-        director.stopped += t => door.SetDoorActive();
+        director.stopped += t => 
+        { 
+            door.SetDoorActive(); 
+            canRepair = false;
+            GameManager.instance.State = GameState.RUNNING;
+        };
     }
 
     private void ShowBuilding()

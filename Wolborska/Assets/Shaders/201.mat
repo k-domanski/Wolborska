@@ -58,7 +58,7 @@ Material:
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
-    - _Alpha_Speed: 0
+    - _Alpha_Speed: 0.3
     - _Alpha_Treshold: 0.85
     - _Alpha_mask_multi: 1
     - _BlendMode: 1
@@ -81,7 +81,7 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
-    - _Speed: 0.2
+    - _Speed: 0.25
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 8
@@ -93,7 +93,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _Strenght: 0.8
+    - _Strenght: 0.6
     - _SupportDecals: 0
     - _SurfaceType: 0
     - _TransparentBackfaceEnable: 0

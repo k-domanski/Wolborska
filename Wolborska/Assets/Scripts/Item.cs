@@ -22,6 +22,7 @@ public class Item : AInteractable
     public void Place(Vector3 position)
     {
         transform.position = position;
+        _itemModel.transform.position = position;
         _itemModel.SetActive(true);
     }
     private void PickUp()

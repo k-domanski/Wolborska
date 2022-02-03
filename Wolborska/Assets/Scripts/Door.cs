@@ -17,7 +17,11 @@ public class Door : AInteractable
         GameManager.instance.State = GameState.CUTSCENE;
         director.Play();
         buttonTrigger.IsActiveTest = false;
-        director.stopped += t => GameManager.instance.State = GameState.RUNNING;
+        director.stopped += t =>
+        {
+            GameManager.instance.State = GameState.RUNNING;
+            Application.Quit();
+        };
 
     }
 

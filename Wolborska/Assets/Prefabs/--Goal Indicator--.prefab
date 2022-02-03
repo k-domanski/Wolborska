@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 454205330127015067}
   speed: 5
-  triggerRadius: 2
+  triggerRadius: 3
 --- !u!1 &454205329200619437
 GameObject:
   m_ObjectHideFlags: 0

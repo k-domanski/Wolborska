@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class Item : AInteractable
 {
-    public Action onItemPickUp;
+    #region Properties
     [SerializeField] private GameObject _itemModel;
     [SerializeField] private FollowPath indicator;
+    #endregion
 
-    public override void Interact() 
+    #region Events
+    public Action onItemPickUp;
+    #endregion
+
+    #region Public
+    public override void Interact()
     {
-        if(!isActive)
+        if (!isActive)
         {
             return;
         }
@@ -24,14 +30,17 @@ public class Item : AInteractable
         transform.position = position;
         _itemModel.transform.position = position;
         _itemModel.SetActive(true);
-    }
+    } 
+    #endregion
+
+    #region Private Methods
     private void PickUp()
     {
         isActive = false;
         buttonTrigger.IsActiveTest = false;
         _itemModel.SetActive(false);
         onItemPickUp?.Invoke();
-        //indicator.SetActive(true);
         indicator.CanMove = true;
-    }
+    } 
+    #endregion
 }

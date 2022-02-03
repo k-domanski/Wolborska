@@ -7,6 +7,8 @@ public class ButtonTrigger : MonoBehaviour
 {
     #region Properties
     public bool IsActiveTest { get => isActive; set => isActive = value; }
+    [SerializeField] private bool isActive = false;
+    [SerializeField] private InteractableType type;
     #endregion
 
     #region Events
@@ -16,8 +18,6 @@ public class ButtonTrigger : MonoBehaviour
     #endregion
 
     #region Private
-    [SerializeField] private bool isActive = false;
-    [SerializeField] private InteractableType type;
     private bool isInRange = false;
     #endregion
 

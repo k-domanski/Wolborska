@@ -39,8 +39,7 @@ public class PlayerMovement : MonoBehaviour
             .With("Right", "<Keyboard>/d")
             .With("Right", "<Keyboard>/rightArrow");
 
-        quit = new InputAction("PlayerJump", binding: "<Keyboard>/escape");
-        //jump.AddBinding("<Keyboard>/space");
+        quit = new InputAction("Quit", binding: "<Keyboard>/escape");
 
         movement.Enable();
         quit.Enable();
@@ -48,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
 
 #endif
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.instance.State == GameState.CUTSCENE)
@@ -71,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
 #else
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
-        jumpPressed = Input.GetButtonDown("Jump");
 #endif
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

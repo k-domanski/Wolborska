@@ -273,11 +273,9 @@ GameObject:
   - component: {fileID: 6232664527973113598}
   - component: {fileID: 6232664527973113599}
   - component: {fileID: 6232664527973113568}
-  - component: {fileID: 6232664527973113569}
   - component: {fileID: 6232664527973113596}
   - component: {fileID: 6232664527973113597}
   - component: {fileID: 6232664527973113594}
-  - component: {fileID: 6232664527973113595}
   m_Layer: 0
   m_Name: 223
   m_TagString: Untagged
@@ -350,20 +348,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6232664527973113569
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6232664527973113570}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!320 &6232664527973113596
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -420,18 +404,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.7791123, y: 6.0541363, z: 0.60378647}
   m_Center: {x: -0.052140288, y: 2.027059, z: 4.5292387}
---- !u!114 &6232664527973113595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6232664527973113570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe7c1631a1330343bd86278387a0dc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6232664528451108807
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +574,7 @@ PrefabInstance:
     - target: {fileID: 2074328249931220241, guid: fa9d20c6bf0e45b4ca9cc88d3b862975, type: 3}
       propertyPath: _itemModel
       value: 
-      objectReference: {fileID: 6232664528178363485}
+      objectReference: {fileID: 0}
     - target: {fileID: 2074328249931220241, guid: fa9d20c6bf0e45b4ca9cc88d3b862975, type: 3}
       propertyPath: buttonTrigger
       value: 
@@ -704,8 +676,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e608554e796ff14185da92ef7798a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6232664528178363485 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2074328251001921987, guid: fa9d20c6bf0e45b4ca9cc88d3b862975, type: 3}
-  m_PrefabInstance: {fileID: 5383949794584124830}
-  m_PrefabAsset: {fileID: 0}

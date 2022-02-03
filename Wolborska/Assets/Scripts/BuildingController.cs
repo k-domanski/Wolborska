@@ -6,13 +6,19 @@ using UnityEngine.Playables;
 
 public class BuildingController : MonoBehaviour
 {
+    #region Properties
     [SerializeField] private GameObject buildingModel;
     [SerializeField] private PlayableDirector director;
     [SerializeField] private FollowPath indicator;
     [SerializeField] private Door door;
+    #endregion
+
+    #region Private
     private int goalsCompleted;
     private bool canRepair;
+    #endregion
 
+    #region Messages
     private void Awake()
     {
         director.gameObject.SetActive(false);
@@ -25,7 +31,9 @@ public class BuildingController : MonoBehaviour
         if (other.GetComponent<PlayerMovement>() && canRepair)
             RepairMemory();
     }
+    #endregion
 
+    #region Private Methods
     private void ManageBuilding()
     {
         goalsCompleted++;
@@ -44,9 +52,9 @@ public class BuildingController : MonoBehaviour
     {
         GameManager.instance.State = GameState.CUTSCENE;
         director.Play();
-        director.stopped += t => 
-        { 
-            door.SetDoorActive(); 
+        director.stopped += t =>
+        {
+            door.SetDoorActive();
             canRepair = false;
             GameManager.instance.State = GameState.RUNNING;
         };
@@ -55,5 +63,6 @@ public class BuildingController : MonoBehaviour
     private void ShowBuilding()
     {
         director.gameObject.SetActive(true);
-    }
+    } 
+    #endregion
 }

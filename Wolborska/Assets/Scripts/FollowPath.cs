@@ -78,7 +78,6 @@ public class FollowPath : MonoBehaviour
     #region Private Methods
     private void MoveToWaypoint(Vector3 pos)
     {
-        //Vector3 destination = new Vector3(pos.x, transform.position.y, pos.z);
         coroutine = MoveAlong(pos);
         StartCoroutine(coroutine);
     }

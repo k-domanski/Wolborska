@@ -6,13 +6,15 @@ using UnityEngine.Playables;
 
 public class Goal : AInteractable
 {
-    #region Private
+    #region Properties
     [SerializeField] private PlayableDirector _playableDirector;
     [SerializeField] private Item _item;
     [SerializeField] private Transform placementPoint;
     #endregion
 
-    public static Action onGoalCompleted;
+    #region Events
+    public static Action onGoalCompleted; 
+    #endregion
 
     #region Messages
     private void OnEnable()

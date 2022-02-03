@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
 #if ENABLE_INPUT_SYSTEM
     InputAction movement;
-    InputAction jump;
+    InputAction quit;
 
     void Start()
     {
@@ -39,16 +39,14 @@ public class PlayerMovement : MonoBehaviour
             .With("Right", "<Keyboard>/d")
             .With("Right", "<Keyboard>/rightArrow");
 
-        jump = new InputAction("PlayerJump", binding: "<Gamepad>/a");
-        jump.AddBinding("<Keyboard>/space");
+        quit = new InputAction("Quit", binding: "<Keyboard>/escape");
 
         movement.Enable();
-        jump.Enable();
+        quit.Enable();
     }
 
 #endif
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.instance.State == GameState.CUTSCENE)
@@ -56,17 +54,21 @@ public class PlayerMovement : MonoBehaviour
 
         float x;
         float z;
-        bool jumpPressed = false;
+        bool quitPressed = false;
 
 #if ENABLE_INPUT_SYSTEM
         var delta = movement.ReadValue<Vector2>();
         x = delta.x;
         z = delta.y;
-        jumpPressed = Mathf.Approximately(jump.ReadValue<float>(), 1);
+        quitPressed = Mathf.Approximately(quit.ReadValue<float>(), 1);
+
+        if(quitPressed)
+        {
+            Application.Quit();
+        }
 #else
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
-        jumpPressed = Input.GetButtonDown("Jump");
 #endif
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -79,11 +81,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
-
-        if (jumpPressed && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
 
         velocity.y += gravity * Time.deltaTime;
 

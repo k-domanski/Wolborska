@@ -8,15 +8,19 @@ using System.Linq;
 public class InteractionUI : MonoBehaviour
 {
 
+    #region Properties
     [SerializeField] TextMeshProUGUI _text;
     [SerializeField] Image _image;
+    #endregion
 
+    #region Private
     private List<ButtonTrigger> _triggers;
+    #endregion
 
+    #region Messages
     private void Start()
     {
         _triggers = FindObjectsOfType<ButtonTrigger>().ToList();
-        //Debug.Log(_triggers.Count);
 
         foreach (var trigger in _triggers)
         {
@@ -25,7 +29,9 @@ public class InteractionUI : MonoBehaviour
             trigger.onButtonPressed += Hide;
         }
     }
+    #endregion
 
+    #region Public
     public void Show(InteractableType type)
     {
         _text.text = GetUIText(type);
@@ -37,8 +43,10 @@ public class InteractionUI : MonoBehaviour
     {
         _image.gameObject.SetActive(false);
         _text.gameObject.SetActive(false);
-    }
+    } 
+    #endregion
 
+    #region Private Methods
     private string GetUIText(InteractableType type)
     {
         string text = "";
@@ -57,5 +65,6 @@ public class InteractionUI : MonoBehaviour
                 break;
         }
         return text;
-    }
+    } 
+    #endregion
 }

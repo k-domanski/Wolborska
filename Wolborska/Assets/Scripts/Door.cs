@@ -6,7 +6,11 @@ using UnityEngine.Playables;
 
 public class Door : AInteractable
 {
+    #region Properties
     [SerializeField] private PlayableDirector director;
+    #endregion
+
+    #region Public
     public override void Interact()
     {
         if (!isActive)
@@ -17,7 +21,11 @@ public class Door : AInteractable
         GameManager.instance.State = GameState.CUTSCENE;
         director.Play();
         buttonTrigger.IsActiveTest = false;
-        director.stopped += t => GameManager.instance.State = GameState.RUNNING;
+        director.stopped += t =>
+        {
+            GameManager.instance.State = GameState.RUNNING;
+            Application.Quit();
+        };
 
     }
 
@@ -26,16 +34,13 @@ public class Door : AInteractable
         isActive = true;
         buttonTrigger.IsActiveTest = true;
     }
+    #endregion
 
-    private void OnEnable()
-    {
-        //isActive = true;
-        //buttonTrigger.IsActiveTest = true;
-    }
-
+    #region Messages
     private void OnDisable()
     {
         isActive = false;
         buttonTrigger.IsActiveTest = false;
-    }
+    } 
+    #endregion
 }

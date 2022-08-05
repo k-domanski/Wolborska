@@ -21,7 +21,7 @@ public class Goal : AInteractable
     {
         _item.onItemPickUp += SetGoalActive;
         _playableDirector.stopped += ChangeGameState;
-        _playableDirector.stopped += (t) => { onGoalCompleted?.Invoke(); };
+        _playableDirector.stopped += t => { onGoalCompleted?.Invoke(); };
     }
     #endregion
 

@@ -1,32 +1,44 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
+    #region Events
+    public Action<bool, string> onActionInRange;
+    public Action<IInteractable> onActionCompleted;
+    #endregion
 
-    public Action<bool, string> onActionRange;
+    #region Private
+    private IInteractable _interactable;
+    #endregion
+
+    #region Messages
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && _interactable != null && _interactable.IsActive())
+        {
+            _interactable.Interact();
+            onActionCompleted?.Invoke(_interactable);
+            onActionInRange?.Invoke(false, null);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        IInteractable item;
-        if (other.TryGetComponent<IInteractable>(out item))
+        if (other.TryGetComponent<IInteractable>(out _interactable) && _interactable.IsActive())
         {
-            onActionRange?.Invoke(!item.IsComplete, item.Message);
-            item.Interact();
+            onActionInRange?.Invoke(true, _interactable.Message);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        IInteractable item;
-        if (other.TryGetComponent<IInteractable>(out item))
+        if (other.TryGetComponent<IInteractable>(out _interactable))
         {
-            onActionRange?.Invoke(!item.IsComplete, item.Message);
-            Debug.Log("Trigger Exit");
+            onActionInRange?.Invoke(false, _interactable.Message);
+            _interactable = null;
         }
-    }
-
+    } 
+    #endregion
 
 }

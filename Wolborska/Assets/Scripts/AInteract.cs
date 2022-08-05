@@ -10,9 +10,13 @@ public abstract class AInteract : MonoBehaviour, IInteractable
     protected string message;
     protected bool isComplete;
 
-    public virtual void Interact()
+    public virtual void Interact() 
     {
-        if (IsComplete)
-            return;
+        isComplete = true;
+    }
+
+    public virtual bool IsActive()
+    {
+        return !isComplete;
     }
 }

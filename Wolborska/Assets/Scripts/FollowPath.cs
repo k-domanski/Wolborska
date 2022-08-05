@@ -43,16 +43,13 @@ public class FollowPath : MonoBehaviour
 
         trigger = GetComponent<SphereCollider>();
         trigger.radius = triggerRadius;
+        trigger.enabled = false;
+        
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!canMove)
-        {
-            return;
-        }
-
         if (other.GetComponent<PlayerMovement>())
         {
             MoveToWaypoint(waypoints[nextWaypointIndex]);
@@ -73,6 +70,14 @@ public class FollowPath : MonoBehaviour
         }
     }
 #endif
+    #endregion
+
+    #region Methods
+    public void Activate()
+    {
+        trigger.enabled = true;
+        MoveToWaypoint(waypoints[nextWaypointIndex]);
+    } 
     #endregion
 
     #region Private Methods

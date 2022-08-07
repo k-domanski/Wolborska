@@ -6,9 +6,12 @@ using System.Linq;
 
 public class InteractionManager : MonoBehaviour
 {
+    #region Private
     private InteractionController _interactionController;
     private List<IInteractable> _interactables = new List<IInteractable>();
-    
+    #endregion
+
+    #region Messages
     private void Awake()
     {
         _interactionController = GetComponent<InteractionController>();
@@ -23,7 +26,9 @@ public class InteractionManager : MonoBehaviour
     {
         _interactionController.onActionCompleted -= HandleActionCompleted;
     }
+    #endregion
 
+    #region Public
     public New.Item GetItem(string itemName)
     {
         New.Item item;
@@ -39,7 +44,7 @@ public class InteractionManager : MonoBehaviour
 
     }
 
-    public List<T> GetInteractables<T> () where T : IInteractable
+    public List<T> GetInteractables<T>() where T : IInteractable
     {
         List<T> list;
         try
@@ -53,11 +58,14 @@ public class InteractionManager : MonoBehaviour
 
         return list;
     }
+    #endregion
 
+    #region Private Methods
     private void HandleActionCompleted(IInteractable interactable)
     {
         if (interactable == null)
             return;
         _interactables.Add(interactable);
-    }
+    } 
+    #endregion
 }

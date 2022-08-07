@@ -7,62 +7,63 @@ using UnityEngine.Playables;
 public class BuildingController : MonoBehaviour
 {
     #region Properties
-    [SerializeField] private GameObject buildingModel;
-    [SerializeField] private PlayableDirector director;
-    [SerializeField] private FollowPath indicator;
-    [SerializeField] private Door door;
+    [SerializeField] private GameObject _buildingModel;
+    [SerializeField] private GoalManager _goalManager;
+    [SerializeField] private FollowPath _indicator;
     #endregion
 
     #region Private
-    private int goalsCompleted;
-    private bool canRepair;
+    private PlayableDirector _animation;
+    private ActionOnTrigger _actionOnTrigger;
+    private Door _door;
     #endregion
 
     #region Messages
     private void Awake()
     {
-        director.gameObject.SetActive(false);
-        indicator.gameObject.SetActive(false);
-        Goal.onGoalCompleted += ManageBuilding;
+        _buildingModel.SetActive(false);
+        _animation = _buildingModel.GetComponent<PlayableDirector>();
+        _actionOnTrigger = GetComponentInChildren<ActionOnTrigger>();
+        _door = GetComponentInChildren<Door>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnEnable()
     {
-        if (other.GetComponent<PlayerMovement>() && canRepair)
-            RepairMemory();
+        _goalManager.onGoalsCompleted += ShowBuilding;
+        _goalManager.onAllGoalsCompleted += HandleAllGoalsCompleted;
+    }
+
+    private void OnDisable()
+    {
+        _goalManager.onGoalsCompleted -= ShowBuilding;
+        _goalManager.onAllGoalsCompleted -= HandleAllGoalsCompleted;
+        _animation.stopped -= HandleAnimationStopped;
     }
     #endregion
 
     #region Private Methods
-    private void ManageBuilding()
+    private void ShowBuilding()
     {
-        goalsCompleted++;
+        _buildingModel.SetActive(true);
+    }
 
-        if (goalsCompleted == 2)
-            ShowBuilding();
-        else if (goalsCompleted == 4)
-        {
-            canRepair = true;
-            indicator.gameObject.SetActive(true);
-            indicator.CanMove = true;
-        }
+    private void HandleAllGoalsCompleted()
+    {
+        _indicator.Activate();
+        _actionOnTrigger.SetAction(RepairMemory);
     }
 
     private void RepairMemory()
     {
         GameManager.instance.State = GameState.CUTSCENE;
-        director.Play();
-        director.stopped += t =>
-        {
-            door.SetDoorActive();
-            canRepair = false;
-            GameManager.instance.State = GameState.RUNNING;
-        };
+        _animation.Play();
+        _animation.stopped += HandleAnimationStopped;
     }
 
-    private void ShowBuilding()
+    private void HandleAnimationStopped(PlayableDirector directon)
     {
-        director.gameObject.SetActive(true);
-    } 
+        _door.Activate();
+        GameManager.instance.State = GameState.RUNNING;
+    }
     #endregion
 }

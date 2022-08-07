@@ -3242,8 +3242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce334d222fd9e2240b0c6c5bf21b6c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  director: {fileID: 484334298}
+  _animation: {fileID: 0}
 --- !u!320 &484334298
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -4784,7 +4783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 901055090872256350, guid: aa44b16cdc4ec094ab9427574a92a727, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 901055090872256350, guid: aa44b16cdc4ec094ab9427574a92a727, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4881,7 +4880,7 @@ Transform:
   - {fileID: 1912409712}
   - {fileID: 103406817}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &770319611
 PrefabInstance:
@@ -7364,7 +7363,7 @@ Transform:
   - {fileID: 68667240}
   - {fileID: 598750476}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1217832296 stripped
 Transform:
@@ -12151,7 +12150,7 @@ BoxCollider:
   m_GameObject: {fileID: 1819294106}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 20, y: 10, z: 20}
   m_Center: {x: 3.23, y: 0.5, z: 0}
@@ -14121,7 +14120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973995247339793308, guid: d35c283c2cca6b94a89b2a5c11eb29d0, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2973995247339793308, guid: d35c283c2cca6b94a89b2a5c11eb29d0, type: 3}
       propertyPath: m_LocalPosition.x

@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace New
-{
     public class Item : AInteract
     {
         public string ItemName => _itemName;
@@ -32,4 +30,3 @@ namespace New
             _indicator?.Deactivate();
         }
     }
-}

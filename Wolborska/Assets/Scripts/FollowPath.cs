@@ -5,18 +5,6 @@ using UnityEngine;
 public class FollowPath : MonoBehaviour
 {
     #region Properties
-    public bool CanMove
-    { 
-        get => canMove;
-        set
-        { 
-            canMove = value;
-            if(value)
-            {
-                MoveToWaypoint(waypoints[nextWaypointIndex]);
-            }
-        }
-    }
     [Header("Refs")]
     [SerializeField] private Transform path;
     [Header("Properties")]
@@ -29,7 +17,6 @@ public class FollowPath : MonoBehaviour
     private IEnumerator coroutine;
     private SphereCollider trigger;
     private int nextWaypointIndex = 0;
-    private bool canMove = false;
     #endregion
 
     #region Messages
@@ -44,8 +31,6 @@ public class FollowPath : MonoBehaviour
         trigger = GetComponent<SphereCollider>();
         trigger.radius = triggerRadius;
         trigger.enabled = false;
-        
-
     }
 
     private void OnTriggerEnter(Collider other)

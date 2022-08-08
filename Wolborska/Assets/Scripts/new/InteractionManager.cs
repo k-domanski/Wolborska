@@ -29,12 +29,12 @@ public class InteractionManager : MonoBehaviour
     #endregion
 
     #region Public
-    public New.Item GetItem(string itemName)
+    public Item GetItem(string itemName)
     {
-        New.Item item;
+        Item item;
         try
         {
-            item = _interactables.OfType<New.Item>().Where(t => t.ItemName == itemName).FirstOrDefault();
+            item = _interactables.OfType<Item>().Where(t => t.ItemName == itemName).FirstOrDefault();
         }
         catch (ArgumentException e)
         {

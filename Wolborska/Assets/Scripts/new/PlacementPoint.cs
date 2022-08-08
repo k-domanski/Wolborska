@@ -13,15 +13,15 @@ public class PlacementPoint : AInteract
     #endregion
 
     #region Private
-    private New.Item _item;
-    private New.Goal _goal;
+    private Item _item;
+    private Goal _goal;
     #endregion
 
     #region Messages
     private void Awake()
     {
         message = "place item";
-        _goal = GetComponent<New.Goal>();
+        _goal = GetComponent<Goal>();
     }
     private void OnEnable()
     {

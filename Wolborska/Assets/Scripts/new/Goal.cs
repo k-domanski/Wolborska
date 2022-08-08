@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace New
-{
     public class Goal : MonoBehaviour
     {
 
@@ -15,4 +13,3 @@ namespace New
             onGoalCompleted?.Invoke();
         }
     } 
-}

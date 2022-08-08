@@ -5,26 +5,33 @@ using UnityEngine;
 
 public class GoalManager : MonoBehaviour
 {
+    #region Events
     public Action onGoalsCompleted;
     public Action onAllGoalsCompleted;
+    #endregion
 
+    #region Private
     private int _goalsCompleted;
+    #endregion
 
+    #region Messages
     private void OnEnable()
     {
-        New.Goal.onGoalCompleted += HandleGoalCompleted;
+        Goal.onGoalCompleted += HandleGoalCompleted;
     }
 
     private void OnDisable()
     {
-        New.Goal.onGoalCompleted -= HandleGoalCompleted;
+        Goal.onGoalCompleted -= HandleGoalCompleted;
     }
+    #endregion
 
+    #region Private Methods
     private void HandleGoalCompleted()
     {
         _goalsCompleted++;
 
-        switch(_goalsCompleted)
+        switch (_goalsCompleted)
         {
             case 2:
                 onGoalsCompleted?.Invoke();
@@ -35,5 +42,6 @@ public class GoalManager : MonoBehaviour
             default:
                 break;
         }
-    }
+    } 
+    #endregion
 }

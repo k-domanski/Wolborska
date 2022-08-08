@@ -41,8 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8054489967220160686}
   - component: {fileID: 8054489967220160687}
-  - component: {fileID: 8054489967220160680}
-  - component: {fileID: 8054489967220160681}
+  - component: {fileID: 4492304309204221579}
+  - component: {fileID: 7755592772438277948}
   m_Layer: 0
   m_Name: Goal Area
   m_TagString: Untagged
@@ -79,7 +79,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8054489967220160680
+--- !u!114 &4492304309204221579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,12 +88,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8054489967220160682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f2673eef8061343807aa60dbcec286, type: 3}
+  m_Script: {fileID: 11500000, guid: bb6d212d5306d574397838cc47a25fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  type: 0
---- !u!114 &8054489967220160681
+  _interactionManager: {fileID: 11400000, guid: 0ef84d2ce7e42a34ba372373ea41f792, type: 2}
+  _itemName: 
+  _animation: {fileID: 0}
+--- !u!114 &7755592772438277948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,10 +103,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8054489967220160682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0382c9f5ba9398489ec0816fa450c49, type: 3}
+  m_Script: {fileID: 11500000, guid: 14081a145609b1e4185f1435a69af2e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  _playableDirector: {fileID: 0}
-  _item: {fileID: 0}
-  placementPoint: {fileID: 29494775025252703}

@@ -7,14 +7,15 @@ using UnityEngine.Playables;
 
 public class Door : AInteract
 {
-    #region Properties
-    [SerializeField] private PlayableDirector _animation;
+    #region Private
+    private PlayableDirector _animation;
     #endregion
 
     #region Messages
     private void Awake()
     {
         message = "open the door";
+        _animation = GetComponent<PlayableDirector>();
         GetComponent<Collider>().enabled = false;
     }
 

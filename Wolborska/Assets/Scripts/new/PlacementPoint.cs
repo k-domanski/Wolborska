@@ -14,12 +14,14 @@ public class PlacementPoint : AInteract
 
     #region Private
     private New.Item _item;
+    private New.Goal _goal;
     #endregion
 
     #region Messages
     private void Awake()
     {
         message = "place item";
+        _goal = GetComponent<New.Goal>();
     }
     private void OnEnable()
     {
@@ -39,7 +41,8 @@ public class PlacementPoint : AInteract
         GameManager.instance.State = GameState.CUTSCENE;
         _animation.Play();
         _item = _interactionManager.InteractionManager.GetItem(_itemName);
-        _item.Place(transform.position);
+        _item.Place(transform.GetChild(0).position);
+        _goal?.Complete();
     }
 
     public override bool IsActive()

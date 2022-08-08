@@ -9,11 +9,13 @@ namespace New
         public string ItemName => _itemName;
         [SerializeField] private GameObject _itemModel;
         [SerializeField] private string _itemName;
-        [SerializeField] private FollowPath _indicator;
+        
+        private FollowPath _indicator;
 
         void Awake()
         {
             message = "pick up";
+            _indicator = GetComponentInChildren<FollowPath>();
         }
 
         public override void Interact()
@@ -25,8 +27,9 @@ namespace New
 
         public void Place(Vector3 position)
         {
-            transform.position = position;
+            _itemModel.transform.position = position;
             _itemModel.SetActive(true);
+            _indicator?.Deactivate();
         }
     }
 }

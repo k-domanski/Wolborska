@@ -49,6 +49,7 @@ public class BuildingController : MonoBehaviour
 
     private void HandleAllGoalsCompleted()
     {
+        _indicator.gameObject.SetActive(true);
         _indicator.Activate();
         _actionOnTrigger.SetAction(RepairMemory);
     }

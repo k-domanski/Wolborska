@@ -77,7 +77,12 @@ public class FollowPath : MonoBehaviour
     {
         trigger.enabled = true;
         MoveToWaypoint(waypoints[nextWaypointIndex]);
-    } 
+    }
+    
+    public void Deactivate()
+    {
+        Destroy(transform.gameObject);
+    }
     #endregion
 
     #region Private Methods
